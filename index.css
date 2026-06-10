@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bg-dark text-text-primary font-inter antialiased;
+    background: linear-gradient(180deg, #050816, #0B1124);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(90deg, #00F5FF, #FF3DF2, #FFE600);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: gradient 6s linear infinite;
+  }
+  
+  .cyber-clip {
+    clip-path: polygon(
+      0 0, 
+      calc(100% - 18px) 0, 
+      100% 18px, 
+      100% 100%, 
+      18px 100%, 
+      0 calc(100% - 18px)
+    );
+  }
+  
+  .neon-shadow {
+    box-shadow: 
+      0 0 24px rgba(0, 245, 255, 0.16),
+      0 0 36px rgba(255, 61, 242, 0.08);
+  }
+  
+  .glass {
+    @apply bg-surface/76 backdrop-blur-xl border border-border-light/12;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-cyan rounded-full;
+}
